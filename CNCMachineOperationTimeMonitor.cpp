@@ -2,7 +2,7 @@
 #include "CNCMachineOperationTimeMonitor.h"
 
 
-CNCMachineOperationTimeMonitor::CNCMachineOperationTimeMonitor()
+CNCMachineOperationTimeMonitor::CNCMachineOperationTimeMonitor():_minutes(0.0f)
 {
 }
 
