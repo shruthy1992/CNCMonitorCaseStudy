@@ -2,7 +2,7 @@
 #include "CNCMachinePartDimentionMonitor.h"
 
 
-CNCMachinePartDimentionMonitor::CNCMachinePartDimentionMonitor()
+CNCMachinePartDimentionMonitor::CNCMachinePartDimentionMonitor():_partDimention(0.0f)
 {
 }
 
