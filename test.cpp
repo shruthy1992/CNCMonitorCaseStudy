@@ -33,6 +33,7 @@ ASSERT_EQ(AlaramType::Enviornment,alaram.GetAlert());
 }
 
 TEST(PartDimentionTest1, Part) {
+	Alaram alaram;
 CNCMachinePartDimentionMonitor _CNCMachinePartDimentionMonitor;
 	CNCMachinePartDimentionValidator _CNCMachinePartDimentionValidator1(_CNCMachinePartDimentionMonitor, alaram);
 	_CNCMachinePartDimentionMonitor.Add(&_CNCMachinePartDimentionValidator1);
@@ -42,6 +43,7 @@ CNCMachinePartDimentionMonitor _CNCMachinePartDimentionMonitor;
 	ASSERT_EQ(AlaramType::None,alaram.GetAlert());
 }
 TEST(TimeOfOperationTest1, Time) {
+	Alaram alaram;
 	CNCMachineOperationTimeMonitor _CNCMachineTimeOfOperationMonitor;
 	CNCMachineOperationTimeValidator _CNCMachineOperationTimeValidator1(_CNCMachineTimeOfOperationMonitor, alaram);
 	_CNCMachineTimeOfOperationMonitor.Add(&_CNCMachineOperationTimeValidator1);
@@ -51,6 +53,7 @@ TEST(TimeOfOperationTest1, Time) {
 	ASSERT_EQ(AlaramType::None,alaram.GetAlert());
 }
 TEST(SelfStatusCode1, Satus) {
+	Alaram alaram;
 	CNCMachineSelfStatusMonitor _CNCMachineSelfStatusMonitor;
 	CNCMachineSelfStatusValidator _CNCMachineSelfStatusValidator1(_CNCMachineSelfStatusMonitor, alaram);
 	_CNCMachineSelfStatusMonitor.Add(&_CNCMachineSelfStatusValidator1);
