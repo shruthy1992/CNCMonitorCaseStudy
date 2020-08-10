@@ -2,7 +2,7 @@
 #include "CNCMachineSelfStatusMonitor.h"
 
 
-CNCMachineSelfStatusMonitor::CNCMachineSelfStatusMonitor()
+CNCMachineSelfStatusMonitor::CNCMachineSelfStatusMonitor():_StatusCode(AllOk)
 {
 }
 
