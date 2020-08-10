@@ -11,19 +11,25 @@
 #include "CNCMachineSelfStatusValidator.h"
 
 #include <gtest/gtest.h>
-Alaram alaram;
-CNCMachineTemperatureMonitor _cNCMachineTempProvider;
-CNCMachineTemperatureValidator _CNCMachineTempValidator1(_cNCMachineTempProvider, alaram);
-_cNCMachineTempProvider.Add(&_CNCMachineTempValidator1);
+
 TEST(TemperatureTest1, Temp_normal) 
 {	
-	_cNCMachineTempProvider.SetTemperature(20);
-	ASSERT_EQ(AlaramType::None,alaram.GetAlert());
+Alaram alaram;
+CNCMachineTemperatureMonitor _CNCMachineTemperatureMonitor;
+CNCMachineTemperatureValidator _CNCMachineTempValidator1(_CNCMachineTemperatureMonitor, alaram);
+_CNCMachineTemperatureMonitor.Add(&_CNCMachineTempValidator1);
+_CNCMachineTemperatureMonitor.SetTemperature(20);
+ASSERT_EQ(AlaramType::None,alaram.GetAlert());
 }
+
 TEST(TemperatureTest2, Temp_high)
 {
-	_cNCMachineTempProvider.SetTemperature(40);
-	ASSERT_EQ(AlaramType::Enviornment,alaram.GetAlert());
+Alaram alaram;
+CNCMachineTemperatureMonitor _CNCMachineTemperatureMonitor;
+CNCMachineTemperatureValidator _CNCMachineTempValidator1(_CNCMachineTemperatureMonitor, alaram);
+_CNCMachineTemperatureMonitor.Add(&_CNCMachineTempValidator1);
+_CNCMachineTemperatureMonitor.SetTemperature(40);
+ASSERT_EQ(AlaramType::Enviornment,alaram.GetAlert());
 }
 
 TEST(PartDimentionTest1, Part) {
