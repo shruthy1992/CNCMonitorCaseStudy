@@ -12,15 +12,20 @@
 
 #include <gtest/gtest.h>
 Alaram alaram;
-TEST(TemperatureTest1, Temp) {	
-	CNCMachineTemperatureMonitor _cNCMachineTempProvider;
-	CNCMachineTemperatureValidator _CNCMachineTempValidator1(_cNCMachineTempProvider, alaram);
-	_cNCMachineTempProvider.Add(&_CNCMachineTempValidator1);
+CNCMachineTemperatureMonitor _cNCMachineTempProvider;
+CNCMachineTemperatureValidator _CNCMachineTempValidator1(_cNCMachineTempProvider, alaram);
+_cNCMachineTempProvider.Add(&_CNCMachineTempValidator1);
+TEST(TemperatureTest1, Temp_normal) 
+{	
 	_cNCMachineTempProvider.SetTemperature(20);
 	ASSERT_EQ(AlaramType::None,alaram.GetAlert());
+}
+TEST(TemperatureTest2, Temp_high)
+{
 	_cNCMachineTempProvider.SetTemperature(40);
 	ASSERT_EQ(AlaramType::Enviornment,alaram.GetAlert());
 }
+
 TEST(PartDimentionTest1, Part) {
 CNCMachinePartDimentionMonitor _CNCMachinePartDimentionMonitor;
 	CNCMachinePartDimentionValidator _CNCMachinePartDimentionValidator1(_CNCMachinePartDimentionMonitor, alaram);
