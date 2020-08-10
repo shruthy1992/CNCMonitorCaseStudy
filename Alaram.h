@@ -13,5 +13,8 @@ public:
 	~Alaram();
 
 	void SendAlert(AlaramType alertType);
+	AlaramType GetAlert();
+private:
+	AlaramType _alaramType;
 };
 
