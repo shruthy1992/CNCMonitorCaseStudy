@@ -33,7 +33,8 @@ ASSERT_EQ(AlaramType::Enviornment,alaram.GetAlert());
 }
 
 
-TEST(PartDimentionTest1, Part_variation) {
+TEST(PartDimentionTest1, Part_variation) 
+{
 CNCMachinePartDimentionMonitor _CNCMachinePartDimentionMonitor;
 CNCMachinePartDimentionValidator _CNCMachinePartDimentionValidator1(_CNCMachinePartDimentionMonitor, alaram);
 _CNCMachinePartDimentionMonitor.Add(&_CNCMachinePartDimentionValidator1);
@@ -50,7 +51,8 @@ _CNCMachinePartDimentionMonitor.SetPartDimention(0.01f);
 ASSERT_EQ(AlaramType::None,alaram.GetAlert());
 }
 
-TEST(TimeOfOperationTest1, Time_high) {
+TEST(TimeOfOperationTest1, Time_high) 
+{
  CNCMachineOperationTimeMonitor _CNCMachineTimeOfOperationMonitor;
 CNCMachineOperationTimeValidator _CNCMachineOperationTimeValidator1(_CNCMachineTimeOfOperationMonitor, alaram);
 _CNCMachineTimeOfOperationMonitor.Add(&_CNCMachineOperationTimeValidator1);
@@ -58,7 +60,8 @@ _CNCMachineTimeOfOperationMonitor.SetTimeOfOperation(4000);
 ASSERT_EQ(AlaramType::Enviornment,alaram.GetAlert());
 }
 
-TEST(TimeOfOperationTest2, Time_normal) {
+TEST(TimeOfOperationTest2, Time_normal) 
+{
 CNCMachineOperationTimeMonitor _CNCMachineTimeOfOperationMonitor;
 CNCMachineOperationTimeValidator _CNCMachineOperationTimeValidator1(_CNCMachineTimeOfOperationMonitor, alaram);
 _CNCMachineTimeOfOperationMonitor.Add(&_CNCMachineOperationTimeValidator1);
@@ -66,14 +69,17 @@ _CNCMachineTimeOfOperationMonitor.SetTimeOfOperation(100);
 ASSERT_EQ(AlaramType::None,alaram.GetAlert());
 }
 
-TEST(SelfStatusCode1, Satus_normal) {
+TEST(SelfStatusCode1, Satus_normal) 
+{
 CNCMachineSelfStatusMonitor _CNCMachineSelfStatusMonitor;
 CNCMachineSelfStatusValidator _CNCMachineSelfStatusValidator1(_CNCMachineSelfStatusMonitor, alaram);
 _CNCMachineSelfStatusMonitor.Add(&_CNCMachineSelfStatusValidator1);
 _CNCMachineSelfStatusMonitor.SetStatusCode(enumStatusCode::AllOk);
 ASSERT_EQ(AlaramType::None,alaram.GetAlert());
+}
 
-TEST(SelfStatusCode2, Satus_error) {
+TEST(SelfStatusCode2, Satus_error) 
+{
 CNCMachineSelfStatusMonitor _CNCMachineSelfStatusMonitor;
 CNCMachineSelfStatusValidator _CNCMachineSelfStatusValidator1(_CNCMachineSelfStatusMonitor, alaram);
 _CNCMachineSelfStatusMonitor.Add(&_CNCMachineSelfStatusValidator1);
