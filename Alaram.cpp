@@ -2,7 +2,7 @@
 #include "Alaram.h"
 
 
-Alaram::Alaram()
+Alaram::Alaram():_alaramType(None)
 {
 }
 
@@ -28,4 +28,9 @@ void Alaram::SendAlert(AlaramType alertType)
 	default:
 		printf("NO ATTENTION NEEDED\n\n");
 	}
+}
+
+AlaramType Alaram::GetAlert()
+{
+	return _alaramType;
 }
