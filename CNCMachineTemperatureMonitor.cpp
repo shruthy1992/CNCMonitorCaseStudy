@@ -1,13 +1,12 @@
 #include "stdafx.h"
 #include "CNCMachineTemperatureMonitor.h"
 
-CNCMachineTemperatureMonitor::CNCMachineTemperatureMonitor()
+CNCMachineTemperatureMonitor::CNCMachineTemperatureMonitor():_temperature (0.0f)
 {
 }
 
 CNCMachineTemperatureMonitor::~CNCMachineTemperatureMonitor()
 {
-	_temperature = 0;
 }
 
 float CNCMachineTemperatureMonitor::GetTemperature()
