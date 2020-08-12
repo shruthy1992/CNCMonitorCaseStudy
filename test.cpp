@@ -9,7 +9,7 @@
 
 #include "CNCMachineSelfStatusMonitor.h"
 #include "CNCMachineSelfStatusValidator.h"
-#include "IAlaram.h"
+#include "Alaram.h"
 #include <gtest/gtest.h>
 
 Alaram alaram;
@@ -21,7 +21,7 @@ TEST(TemperatureTest1, Temp_normal)
 CNCMachineTemperatureValidator _CNCMachineTempValidator1(_CNCMachineTemperatureMonitor, alaram);
 _CNCMachineTemperatureMonitor.Add(&_CNCMachineTempValidator1);
 _CNCMachineTemperatureMonitor.SetTemperature(20);
-ASSERT_EQ(AlaramType::None,alaram.GetAlert());
+ASSERT_EQ(AlaramType::None,alaram.GetAlaram());
 }
 
 TEST(TemperatureTest2, Temp_high)
@@ -30,7 +30,7 @@ TEST(TemperatureTest2, Temp_high)
 CNCMachineTemperatureValidator _CNCMachineTempValidator1(_CNCMachineTemperatureMonitor, alaram);
 _CNCMachineTemperatureMonitor.Add(&_CNCMachineTempValidator1);
 _CNCMachineTemperatureMonitor.SetTemperature(40);
-ASSERT_EQ(AlaramType::Enviornment,alaram.GetAlert());
+ASSERT_EQ(AlaramType::Enviornment,alaram.GetAlaram());
 }
 
 
@@ -40,7 +40,7 @@ CNCMachinePartDimentionMonitor _CNCMachinePartDimentionMonitor;
 CNCMachinePartDimentionValidator _CNCMachinePartDimentionValidator1(_CNCMachinePartDimentionMonitor, alaram);
 _CNCMachinePartDimentionMonitor.Add(&_CNCMachinePartDimentionValidator1);
 _CNCMachinePartDimentionMonitor.SetPartDimention(0.2f);
-ASSERT_EQ(AlaramType::Machine,alaram.GetAlert());
+ASSERT_EQ(AlaramType::Machine,alaram.GetAlaram());
 }
 
 TEST(PartDimentionTest2, Part_normal) 
@@ -49,7 +49,7 @@ TEST(PartDimentionTest2, Part_normal)
 CNCMachinePartDimentionValidator _CNCMachinePartDimentionValidator1(_CNCMachinePartDimentionMonitor, alaram);
 _CNCMachinePartDimentionMonitor.Add(&_CNCMachinePartDimentionValidator1);
 _CNCMachinePartDimentionMonitor.SetPartDimention(0.01f);
-ASSERT_EQ(AlaramType::None,alaram.GetAlert());
+ASSERT_EQ(AlaramType::None,alaram.GetAlaram());
 }
 
 TEST(TimeOfOperationTest1, Time_high) 
@@ -58,7 +58,7 @@ TEST(TimeOfOperationTest1, Time_high)
 CNCMachineOperationTimeValidator _CNCMachineOperationTimeValidator1(_CNCMachineTimeOfOperationMonitor, alaram);
 _CNCMachineTimeOfOperationMonitor.Add(&_CNCMachineOperationTimeValidator1);
 _CNCMachineTimeOfOperationMonitor.SetTimeOfOperation(4000);
-ASSERT_EQ(AlaramType::Enviornment,alaram.GetAlert());
+ASSERT_EQ(AlaramType::Enviornment,alaram.GetAlaram());
 }
 
 TEST(TimeOfOperationTest2, Time_normal) 
@@ -67,7 +67,7 @@ CNCMachineOperationTimeMonitor _CNCMachineTimeOfOperationMonitor;
 CNCMachineOperationTimeValidator _CNCMachineOperationTimeValidator1(_CNCMachineTimeOfOperationMonitor, alaram);
 _CNCMachineTimeOfOperationMonitor.Add(&_CNCMachineOperationTimeValidator1);
 _CNCMachineTimeOfOperationMonitor.SetTimeOfOperation(100);
-ASSERT_EQ(AlaramType::None,alaram.GetAlert());
+ASSERT_EQ(AlaramType::None,alaram.GetAlaram());
 }
 
 TEST(SelfStatusCode1, Satus_normal) 
@@ -76,7 +76,7 @@ CNCMachineSelfStatusMonitor _CNCMachineSelfStatusMonitor;
 CNCMachineSelfStatusValidator _CNCMachineSelfStatusValidator1(_CNCMachineSelfStatusMonitor, alaram);
 _CNCMachineSelfStatusMonitor.Add(&_CNCMachineSelfStatusValidator1);
 _CNCMachineSelfStatusMonitor.SetStatusCode(enumStatusCode::AllOk);
-ASSERT_EQ(AlaramType::None,alaram.GetAlert());
+ASSERT_EQ(AlaramType::None,alaram.GetAlaram());
 }
 
 TEST(SelfStatusCode2, Satus_error) 
@@ -85,7 +85,7 @@ CNCMachineSelfStatusMonitor _CNCMachineSelfStatusMonitor;
 CNCMachineSelfStatusValidator _CNCMachineSelfStatusValidator1(_CNCMachineSelfStatusMonitor, alaram);
 _CNCMachineSelfStatusMonitor.Add(&_CNCMachineSelfStatusValidator1);
 _CNCMachineSelfStatusMonitor.SetStatusCode(enumStatusCode::ControlBoardNotOk);
-ASSERT_EQ(AlaramType::Machine,alaram.GetAlert());
+ASSERT_EQ(AlaramType::Machine,alaram.GetAlaram());
 }
 
 
