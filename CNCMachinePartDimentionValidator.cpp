@@ -24,10 +24,10 @@ void CNCMachinePartDimentionValidator::ValidatePartDimention()
 {
 	if (_CNCMachinePartDimentionMonitor.GetPartDimention() > PART_DIM_LIMIT)
 	{
-		_alaram.SendAlert(AlaramType::Machine);
+		_alaram.SendAlaram(AlaramType::Machine);
 	}
 	else
 	{
-		_alaram.SendAlert(None);
+		_alaram.SendAlaram(None);
 	}
 }
