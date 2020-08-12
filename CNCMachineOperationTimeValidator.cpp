@@ -3,7 +3,7 @@
 
 #define TIME_LIMIT 6.0f
 
-CNCMachineOperationTimeValidator::CNCMachineOperationTimeValidator(CNCMachineOperationTimeMonitor& timemonitor, Alaram& alaram) :
+CNCMachineOperationTimeValidator::CNCMachineOperationTimeValidator(CNCMachineOperationTimeMonitor& timemonitor, IAlaram& alaram) :
 _CNCMachinTimeOfOperationMonitor(timemonitor), _Alaram(alaram)
 {
 }
