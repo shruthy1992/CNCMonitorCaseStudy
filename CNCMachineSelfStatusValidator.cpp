@@ -2,7 +2,7 @@
 #include "CNCMachineSelfStatusValidator.h"
 
 
-CNCMachineSelfStatusValidator::CNCMachineSelfStatusValidator(CNCMachineSelfStatusMonitor& statusMonitor, Alaram& alaram) :
+CNCMachineSelfStatusValidator::CNCMachineSelfStatusValidator(CNCMachineSelfStatusMonitor& statusMonitor, IAlaram& alaram) :
 _CNCMachineSelfStatusMonitor(statusMonitor), _Alaram(alaram)
 {
 }
