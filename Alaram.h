@@ -1,19 +1,19 @@
 #pragma once
-#include"Alaram.h"
+#include"IAlaram.h"
 enum AlaramType
 {
 	Enviornment, 
 	Machine,
 	None
 };
-class Alaram
+class Alaram : public IAlaram
 {
 public:
 	Alaram();
 	~Alaram();
 
-	void SendAlert(AlaramType alertType);
-	AlaramType GetAlert();
+	virtual void SendAlert(AlaramType alertType);
+	virtual AlaramType GetAlert();
 private:
 	AlaramType _alaramType;
 };
