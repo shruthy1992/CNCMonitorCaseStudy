@@ -3,7 +3,7 @@
 
 #define TEMPARATURE_LIMIT 35
 
-CNCMachineTemperatureValidator::CNCMachineTemperatureValidator(CNCMachineTemperatureMonitor& tempMonitor, Alaram& alaram):
+CNCMachineTemperatureValidator::CNCMachineTemperatureValidator(CNCMachineTemperatureMonitor& tempMonitor, IAlaram& alaram):
 _CNCMachineTemperatureMonitor(tempMonitor), _alaram(alaram)
 {
 }
