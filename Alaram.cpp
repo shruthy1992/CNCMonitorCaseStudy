@@ -2,7 +2,7 @@
 #include "Alaram.h"
 
 
-Alaram::Alaram():_alaramType(None)
+Alaram::Alaram():_alaramType(AlertType::None)
 {
 }
 
