@@ -21,10 +21,10 @@ void CNCMachineSelfStatusValidator::CheckMachineStatus()
 {
 	if (_CNCMachineSelfStatusMonitor.GetStatusCode() != AllOk)
 	{
-		_Alaram.SendAlert(AlaramType::Machine);
+		_Alaram.SendAlaram(AlaramType::Machine);
 	}
 	else
 	{
-		_Alaram.SendAlert(None);
+		_Alaram.SendAlaram(None);
 	}
 }
