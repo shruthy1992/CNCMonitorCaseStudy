@@ -7,9 +7,9 @@ public:
 	Alaram();
 	~Alaram();
 
-	virtual void SendAlert(AlaramType alertType);
-	virtual AlaramType GetAlert();
+	virtual void SendAlaram(AlaramType alert);
+	virtual AlaramType GetAlaram();
 private:
-	AlaramType _alaramType;
+	AlaramType _alaram;
 };
 
