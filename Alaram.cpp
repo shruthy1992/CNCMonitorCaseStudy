@@ -2,7 +2,7 @@
 #include "Alaram.h"
 
 
-Alaram::Alaram():_alaramType(AlertType::None)
+Alaram::Alaram():_alaram(AlaramType::None)
 {
 }
 
@@ -11,9 +11,9 @@ Alaram::~Alaram()
 {
 }
 
-void Alaram::SendAlert(AlaramType alertType)
+void Alaram::SendAlaram(AlaramType alert)
 {
-	_alaramType = alertType;
+	_alaram = alertType;
 	switch (alertType)
 	{
 	case AlaramType::Enviornment:
@@ -31,7 +31,7 @@ void Alaram::SendAlert(AlaramType alertType)
 	}
 }
 
-AlaramType Alaram::GetAlert()
+AlaramType Alaram::GetAlaram()
 {
-	return _alaramType;
+	return _alaram;
 }
