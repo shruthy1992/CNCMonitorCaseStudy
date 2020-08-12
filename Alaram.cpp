@@ -13,8 +13,8 @@ Alaram::~Alaram()
 
 void Alaram::SendAlaram(AlaramType alert)
 {
-	_alaram = alertType;
-	switch (alertType)
+	_alaram = alert;
+	switch (alert)
 	{
 	case AlaramType::Enviornment:
 	{
