@@ -3,7 +3,7 @@
 
 #define PART_DIM_LIMIT 0.05
 
-CNCMachinePartDimentionValidator::CNCMachinePartDimentionValidator(CNCMachinePartDimentionMonitor& partDimentionMonitor, Alaram& alaram):
+CNCMachinePartDimentionValidator::CNCMachinePartDimentionValidator(CNCMachinePartDimentionMonitor& partDimentionMonitor, IAlaram& alaram):
 _CNCMachinePartDimentionMonitor(partDimentionMonitor),
 _alaram(alaram)
 {
