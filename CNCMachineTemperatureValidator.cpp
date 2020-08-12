@@ -21,10 +21,10 @@ void CNCMachineTemperatureValidator::ValidateTemparature()
 {
 	if (_CNCMachineTemperatureMonitor.GetTemperature() > TEMPARATURE_LIMIT)
 	{
-		_alaram.SendAlert(AlaramType::Enviornment);
+		_alaram.SendAlaram(AlaramType::Enviornment);
 	}
 	else
 	{
-		_alaram.SendAlert(None);
+		_alaram.SendAlaram(None);
 	}
 }
