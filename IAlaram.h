@@ -1,6 +1,6 @@
 #pragma once
 
-enum AlertType
+enum AlaramType
 {
 	Enviornment,
 	Machine,
@@ -12,7 +12,7 @@ public:
 
 	~IAlaram(){};
 
-	virtual void SendAlert(AlertType alertType)=0;
-	virtual AlertType GetAlert()=0;
+	virtual void SendAlaram(AlaramType alert)=0;
+	virtual AlaramType GetAlaram()=0;
 };
 
