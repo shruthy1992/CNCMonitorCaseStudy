@@ -1,5 +1,5 @@
 #pragma once
-//#include"Alaram.h"
+
 enum AlertType
 {
 	Enviornment,
@@ -9,12 +9,10 @@ enum AlertType
 class IAlaram
 {
 public:
-	//IAlaram();
+
 	~IAlaram(){};
 
 	virtual void SendAlert(AlertType alertType)=0;
 	virtual AlertType GetAlert()=0;
-//private:
-	//AlertType _alertType;
 };
 
