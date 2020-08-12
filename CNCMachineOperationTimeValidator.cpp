@@ -22,11 +22,11 @@ void CNCMachineOperationTimeValidator::ValidateTimeofOperation()
 {
 	if (ConvertToHour(_CNCMachinTimeOfOperationMonitor.GetTimeOfOperation()) > TIME_LIMIT)
 	{
-		_Alaram.SendAlert(AlaramType::Enviornment);
+		_Alaram.SendAlaram(AlaramType::Enviornment);
 	}
 	else
 	{
-		_Alaram.SendAlert(None);
+		_Alaram.SendAlaram(AlaramType::None);
 	}
 }
 float CNCMachineOperationTimeValidator::ConvertToHour(float minutes)
