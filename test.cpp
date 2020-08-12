@@ -9,8 +9,9 @@
 
 #include "CNCMachineSelfStatusMonitor.h"
 #include "CNCMachineSelfStatusValidator.h"
-
+#include "IAlaram.h"
 #include <gtest/gtest.h>
+
 Alaram alaram;
 
 
